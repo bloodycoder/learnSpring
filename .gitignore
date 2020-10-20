@@ -7,3 +7,4 @@ learn-spring/.idea/workspace.xml
 learn-spring/learn-spring.iml
 learn-spring/.idea/uiDesigner.xml
 learn-spring/target/*
+*.class
