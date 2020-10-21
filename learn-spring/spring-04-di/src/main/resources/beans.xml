@@ -2,16 +2,52 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id = "addr" class="com.picard.Address">
+        <property name="address" value="北京"></property>
+    </bean>
 
     <bean id = "student" class="com.picard.Student" >
+        <!-- 常量注入 -->
         <property name="name" value="PicardXie"></property>
-
+        <!-- bean注入 -->
+        <property name="address" ref="addr"></property>
+        <!-- array[]注入 -->
+        <property name="books">
+            <array>
+                <value>book1name</value>
+                <value>book2name</value>
+                <value>book3name</value>
+            </array>
+        </property>
+        <!-- List注入 -->
+        <property name="hobbys">
+            <list>
+                <value>听歌</value>
+            </list>
+        </property>
+        <!-- Map注入 -->
+        <property name="card">
+            <map>
+                <entry key="idcard" value="123456"></entry>
+            </map>
+        </property>
+        <!-- Set注入 -->
+        <property name="game">
+            <set>
+                <value>LOL</value>
+            </set>
+        </property>
+        <!-- null -->
+        <property name="wife">
+            <null></null>
+        </property>
+        <!-- properties -->
+        <property name="info">
+            <props>
+                <prop key="学号">20192011</prop>
+                <prop key="性别">男</prop>
+            </props>
+        </property>
     </bean>
-    <!-- 演示alias作用 -->
-    <alias name="user" alias="user2"></alias>
-    <!--
-    import的使用
-    一般用于团队开发。
-    -->
 
 </beans>
