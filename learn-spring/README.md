@@ -1,10 +1,16 @@
 # spring新手教程
 
-1. spring-configuration: 构造器注入，alias作用
+## spring-configuration
 
-2. spring-04-di: 各种属性的注入方式。依赖注入。
+构造器注入，alias作用
 
-3. spring-05-autowired: 注解
+## spring-04-di
+
+各种属性的注入方式。依赖注入。
+
+## spring-05-autowired
+
+注解
 
 @Autowired: 自动装配，通过类型、名字，配合`Qualifier`使用
 
@@ -16,3 +22,12 @@
 - service @Service
 - controller @Controller
 四个注解功能意义，都代表将类注册到Spring中。
+
+##  spring-08-proxy
+
+动态代理和静态代理角色意义。
+
+动态代理，demo04，万能模板。
+
+一个动态代理类代理一个接口。
+
