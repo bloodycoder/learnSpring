@@ -11,6 +11,8 @@
     <modules>
         <module>spring-configuration</module>
         <module>spring-04-di</module>
+        <module>spring-05-autowired</module>
+        <module>spring-06-anno</module>
     </modules>
     <dependencies>
         <dependency>
@@ -23,9 +25,15 @@
             <artifactId>lombok</artifactId>
             <version>1.18.4</version>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
     <properties>
-        <maven.compiler.source>14</maven.compiler.source>
-        <maven.compiler.target>14</maven.compiler.target>
+        <maven.compiler.source>10</maven.compiler.source>
+        <maven.compiler.target>10</maven.compiler.target>
     </properties>
 </project>

@@ -1,0 +1,21 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 演示自动装配 -->
+    <bean id = "cat" class="com.picard.Cat" ></bean>
+    <bean id = "dog11" class="com.picard.Dog" ></bean>
+    <!--
+        byName原理，会自动在容器上下文中查找，和自己对象set方法后面的值对应的beanid
+
+        byType原理，会自动在容器上下文中查找，和自己对象属性类型相同的bean（也就是类型唯一）
+    <bean id = "human" class="com.picard.Human" autowire="byName">
+        <property name="name" value="Picard"></property>
+    </bean>
+    <bean id = "human" class="com.picard.Human" autowire="byType">
+        <property name="name" value="Picard"></property>
+    </bean>
+    -->
+
+
+</beans>
