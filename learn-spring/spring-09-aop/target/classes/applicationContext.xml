@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd">
+    <!-- 注册bean -->
+    <bean id="userService" class="com.picard.service.UserServiceImpl"></bean>
+    <bean id="log" class="com.picard.log.Log"></bean>
+    <bean id="afterlog" class="com.picard.log.AfterLog"></bean>
+    <!-- 配置aop -->
+
+    <!-- 方式一，使用原生Spring API切口-->
+<!--    <aop:config>-->
+<!--       切入点 execution(要执行的位置)-->
+<!--        <aop:pointcut id="pointcut" expression="execution(* com.picard.service.UserServiceImpl.*(..))"/>-->
+<!--        <aop:advisor advice-ref="log" pointcut-ref="pointcut"></aop:advisor>-->
+<!--        <aop:advisor advice-ref="afterlog" pointcut-ref="pointcut"></aop:advisor>-->
+<!--    </aop:config>-->
+<!--     方式二，使用原生Spring API切口-->
+<!--    <bean id="diy" class="com.picard.diy.DiyPointCut"></bean>-->
+<!--    <aop:config>-->
+<!--        <aop:aspect ref="diy">-->
+<!--            <aop:pointcut id="point" expression="execution(* com.picard.service.UserServiceImpl.*(..))"/>-->
+<!--            <aop:before method="before" pointcut-ref="point"></aop:before>-->
+<!--            <aop:after method="after" pointcut-ref="point"></aop:after>-->
+<!--        </aop:aspect>-->
+<!--    </aop:config>-->
+    <!--     方式三，使用注解-->
+    <bean id="anoPo" class="com.picard.diy.AnnotationPointcut"></bean>
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+</beans>
